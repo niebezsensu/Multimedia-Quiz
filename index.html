@@ -12,16 +12,77 @@
 	<script src="js/jquery-2.1.3.min.js"></script>
 	<script src="js/quiz.js"></script>
 </body>
-<div class="container" style="position:relative">
-	<button id='prev'>Poprzednie</button>
-	<button id='next'>Następne</button>
+<div class="container">
+
 	<div class="questions">
-		<div id="question-1" class="jumbotron question actuall" style="position:absolute;left: 0px">
+		<button id='prev' class="btn btn-default">BACK</button>
+		<button id='next' class="btn btn-default disabled">NEXT</button>
+		<div id="question-1" class="jumbotron question actuall">
 			<div class="header row">
 				<h2>Pytanie 1</h2>
 			</div>
 			<div class="content row">
-				<video src="video/small.ogv" poster="images/scrollbar.png">
+				<video class="item"  src="video/what-animal.webm">
+					Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="videofile.ogg">download it</a> and watch it with your favorite video player!
+				</video>
+			</div>
+			<div class="answers row">
+				<div class="question-content">
+					<h3>Jakie zwierze jest widoczne na filmie:</h3>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="answers-1"> Pies
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="answers-1"> Kot
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="answers-1"> Mysz
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id="question-2" class="jumbotron question">
+			<div class="header row">
+				<h2>Pytanie 2</h2>
+			</div>
+			<div class="content row">
+				<video class="item"  src="video/what-cat.webm">
+					Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="videofile.ogg">download it</a> and watch it with your favorite video player!
+				</video>
+			</div>
+			<div class="answers row">
+				<div class="question-content">
+					<h3>Jaki gatunek kota jest widoczny na filmie:</h3>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="answers-2"> Maine Coon
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="answers-2"> Kot Brytyjski
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="answers-2"> Kot Syjamski
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id="question-3" class="jumbotron question">
+			<div class="header row">
+				<h2>Pytanie 3</h2>
+			</div>
+			<div class="content row">
+				<video class="item" src="video/small.ogv">
 					Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="videofile.ogg">download it</a> and watch it with your favorite video player!
 				</video>
 			</div>
@@ -30,20 +91,8 @@
 				<label for="answer-1-1">Odpowiedź 1</label>
 			</div>
 		</div>
-		<div id="question-2" class="jumbotron question" style="position:absolute;">
-			<div class="header row">
-				<h2>Pytanie 1</h2>
-			</div>
-			<div class="content row">
-				<video src="video/small.ogv" poster="images/scrollbar.png">
-					Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="videofile.ogg">download it</a> and watch it with your favorite video player!
-				</video>
-			</div>
-			<div class="answers row">
-				<input id="answer-1-1" type="checkbox" name="sometext" />
-				<label for="answer-1-1">Odpowiedź 1</label>
-			</div>
-		</div>
+
+
 	</div>
 
 

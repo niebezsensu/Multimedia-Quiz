@@ -1,0 +1,53 @@
+
+
+.container{
+    position:relative; 
+    width: 700px;
+    height: 530px;
+}
+.questions{
+    position: relative;
+    overflow: hidden;
+    height: 610px;
+    
+}
+.question{
+    position:absolute;left: 0px
+}
+#question-1{
+    z-index: 5;
+}
+#question-2{
+    z-index: 4;
+}
+#question-3{
+    z-index: 3;
+}
+#question-4{
+    z-index: 2;
+}
+#question-5{
+    z-index: 1;
+}
+
+.item{
+    width: 560px;height: 320px
+}
+
+#prev{
+    display: none;
+    position: absolute;
+    bottom: 5px; 
+    left: 25px;
+    z-index: 6;
+}
+#next{
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+    z-index: 6;
+}
+
+video{
+    cursor: pointer;
+}
