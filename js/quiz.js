@@ -45,6 +45,9 @@ $(document).on('ready', function() {
             $('.question').first().addClass('actuall');
             
             $('#next').text('NEXT');
+            
+            $('.radio').addClass('disabled')
+            $('.radio input').attr('disabled',true);
         } else {
             
             $('#next').addClass('disabled');
@@ -77,6 +80,11 @@ $(document).on('ready', function() {
         if(waytingForApprove) {
             waytingForApprove = false;
             $('#next').text('NEXT');
+        }
+        if(isFinished) {
+            // isFinished = false;
+            $('#next').text('NEXT');
+            // waytingForApprove = true;
         }
         var self = $(this);
         $('.actuall').prev().animate({
