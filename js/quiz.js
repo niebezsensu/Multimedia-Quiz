@@ -9,6 +9,13 @@ $(document).on('ready', function() {
     });
     
     $('.answers input').on('click', function() {
+        var selected = $(this).data('answer');
+        var correct = $(this).parents(".answers").data('answer');
+        if(selected === correct) {
+            $(this).parents(".answers").data('correct', true);
+        } else {
+            $(this).parents(".answers").data('correct', false);
+        }
         $(this).parents(".answers").data('selected', true);
         $('#next').removeClass('disabled');
     });
@@ -19,7 +26,26 @@ $(document).on('ready', function() {
         var self = $(this);
         
         if(waytingForTestRepeat) {
+            $('.answers').removeClass('correct');
+            $('.answers').removeClass('incorrect');
             
+            $('.radio').removeClass('disabled')
+            $('.radio input').attr('disabled',false);
+            $('.radio input').attr('checked',false);
+            
+            $('#next').text('NEXT');
+            $('#next').addClass('disabled');
+            
+            isFinished = false,
+            waytingForApprove = false,
+            waytingForTestRepeat = false;
+            
+            $('.actuall').removeClass('actuall');
+            $('.question').each(function() {
+                $(this).css('left', '0px')
+                $(this).css('opacity', '1')
+            })
+            $('.question').first().addClass('actuall');
         } else if(isFinished) {
             $('.actuall').animate({
                 opacity: 0.25,
@@ -48,6 +74,14 @@ $(document).on('ready', function() {
             
             $('.radio').addClass('disabled')
             $('.radio input').attr('disabled',true);
+            
+            $('.answers').each(function() {
+                if($(this).data('correct')) {
+                    $(this).addClass('correct');
+                } else {
+                    $(this).addClass('incorrect');
+                }
+            });
         } else {
             
             $('#next').addClass('disabled');
@@ -82,9 +116,9 @@ $(document).on('ready', function() {
             $('#next').text('NEXT');
         }
         if(isFinished) {
-            // isFinished = false;
+            waytingForTestRepeat = false;
             $('#next').text('NEXT');
-            // waytingForApprove = true;
+            //waytingForApprove = true;
         }
         var self = $(this);
         $('.actuall').prev().animate({

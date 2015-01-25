@@ -51,3 +51,13 @@
 video{
     cursor: pointer;
 }
+
+.incorrect .marked:after{
+    content:"✔";
+    color: red;
+}
+
+.correct .marked:after{
+    content:"✔";
+    color: green;
+}
