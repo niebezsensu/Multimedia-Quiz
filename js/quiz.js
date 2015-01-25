@@ -4,7 +4,7 @@ $(document).on('ready', function() {
         waytingForApprove = false,
         waytingForTestRepeat = false;
     
-    $('.item').on('click', function() {
+    $('video.item').on('click', function() {
         $(this).get(0).play();
     });
     
