@@ -101,7 +101,6 @@ $(document).on('ready', function() {
             $('.actuall').removeClass('actuall');
             $(this).addClass('actuall');   
             
-            
         })
     })
 })
