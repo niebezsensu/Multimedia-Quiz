@@ -1,8 +1,8 @@
 $(document).on('ready', function() {
     
     var isFinished = false,
-        waytingForApprove = false,
-        waytingForTestRepeat = false;
+        waitingForApprove = false,
+        waitingForTestRepeat = false;
     
     $('video.item').on('click', function() {
         $(this).get(0).play();
@@ -25,7 +25,7 @@ $(document).on('ready', function() {
 
         var self = $(this);
         
-        if(waytingForTestRepeat) {
+        if(waitingForTestRepeat) {
             $('.answers').removeClass('correct');
             $('.answers').removeClass('incorrect');
             
@@ -37,8 +37,8 @@ $(document).on('ready', function() {
             $('#next').addClass('disabled');
             
             isFinished = false,
-            waytingForApprove = false,
-            waytingForTestRepeat = false;
+            waitingForApprove = false,
+            waitingForTestRepeat = false;
             
             $('.actuall').removeClass('actuall');
             $('.question').each(function() {
@@ -54,14 +54,14 @@ $(document).on('ready', function() {
     
                 if ($(this).nextAll().length == 1) {
                     $('#next').text('Powtórz test');
-                    waytingForTestRepeat = true;
+                    waitingForTestRepeat = true;
                 } 
                 
                 $(this).removeClass('actuall');
                 $(this).next().addClass('actuall'); 
                 
             });
-        } else if(waytingForApprove) {
+        } else if(waitingForApprove) {
             isFinished = true;
             $('.actuall').removeClass('actuall');
             $('.question').each(function() {
@@ -96,7 +96,7 @@ $(document).on('ready', function() {
     
                 if ($(this).nextAll().length == 1) {
                     $('#next').text('Potwierdź rezultaty');
-                    waytingForApprove = true;
+                    waitingForApprove = true;
                 } 
                 
                 $(this).removeClass('actuall');
@@ -111,14 +111,14 @@ $(document).on('ready', function() {
         $('#next').show();
         $('#next').removeClass('disabled');
 
-        if(waytingForApprove) {
-            waytingForApprove = false;
+        if(waitingForApprove) {
+            waitingForApprove = false;
             $('#next').text('NEXT');
         }
         if(isFinished) {
-            waytingForTestRepeat = false;
+            waitingForTestRepeat = false;
             $('#next').text('NEXT');
-            //waytingForApprove = true;
+            //waitingForApprove = true;
         }
         var self = $(this);
         $('.actuall').prev().animate({
